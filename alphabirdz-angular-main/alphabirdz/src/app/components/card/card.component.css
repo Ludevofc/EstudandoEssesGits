@@ -1,0 +1,136 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 1rem auto;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 300px;
+    width: 328px;
+    box-shadow: var(--drop-shadow);
+    border-radius: 16px;
+    height: fit-content;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.card__container--header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card__container--header h2 {
+    font: var(--font-24-medium);
+    color: var(--verde-escuro-90);
+}
+
+.circle {
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF;
+    border: 2px solid var(--verde-escuro-90);
+    border-radius: 50%;
+    margin: 16px;
+}
+
+.card__container--img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #C3C3C3;
+}
+
+.bird_img {
+    width: 100%;
+}
+
+.card_container--footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+}
+
+.card_container--details {
+    margin: 0 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card_container--details p::first-letter {
+    text-transform: uppercase;
+}
+
+.hide_details {
+    display: none;
+}
+
+button {
+    margin: 0 16px 32px 16px;
+    background-color: transparent;
+    color: var(--verde-escuro-90);
+    border: none;
+    font-size: var(--font-16-normal);
+}
+
+.card_container--details h3, 
+.card_container--footer h3 {
+    font: var(--font-24-medium);
+    color: var(--verde-escuro-90);
+}
+
+p {
+    font: var(--font-16-normal);
+    color: var(--verde-escuro-90);
+}
+
+.habitat p::first-letter {
+    text-transform: uppercase;
+}
+
+.gender {
+    width: 48px;
+    height: 48px;
+}
+
+
+@media (min-width: 992px) {
+    main {
+        margin: 2rem auto;
+        gap: 48px;
+    }
+
+    .card {
+        box-shadow: var(--drop-shadow-desktop);
+        width: 544px;
+    }
+
+    .card__container--header {
+        font: var(--font-32-medium);
+    }
+
+    .circle {
+        width: 48px;
+        height: 48px;
+        margin: 16px 8px 16px 16px;
+    }
+
+    .habitat h3{
+        font: var(--font-32-medium);
+    }
+    
+    .habitat p {
+        font: var(--font-24-normal);
+    }
+}

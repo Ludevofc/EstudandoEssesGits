@@ -1,0 +1,73 @@
+.task {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--gray-400);
+    background-color: var(--gray-500);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+
+    .check-container {
+        position: relative;
+        height: 24px;
+        width: 24px;
+
+        .check-button {
+            position: absolute;
+            opacity: 0;
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            z-index: 1;
+
+            &:checked ~ .checkmark {
+                background: url('src/assets/checked.svg') no-repeat center center;
+            }
+
+            &:hover ~ .checkmark {
+                background-color: var(--blue-dark);
+            }
+
+            &:checked:hover ~ .checkmark {
+                filter: brightness(1.4);
+            }
+        }
+
+        .checkmark {
+            position: absolute;
+            left: 0;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: url('src/assets/check.svg') no-repeat center center;
+        }
+    }
+
+    .description-container {
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+
+        .description {
+            width: 100%;
+            word-wrap: break-word;
+            color: var(--gray-100);
+            font-size: var(--font-size-medium);
+            font-weight: var(--font-weight-regular);
+        }
+    }
+
+    svg {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+
+        &:hover path {
+            fill: var(--danger);
+        }
+    }
+}

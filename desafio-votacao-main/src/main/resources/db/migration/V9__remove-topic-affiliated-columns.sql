@@ -1,0 +1,1 @@
+ALTER TABLE vote ADD CONSTRAINT affiliated_id FOREIGN KEY (affiliated_id) REFERENCES affiliated (id);

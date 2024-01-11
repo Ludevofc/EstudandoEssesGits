@@ -1,0 +1,145 @@
+.dark-mode:root {
+  --primary-pink: #FF0964;
+  --secondary-color: #FFFFFF;
+  --background-primary: #0F0F0F;
+  --background-secondary: #161616;
+  --plusdev-red: #920000;
+}
+
+:root {
+  --primary-pink: #FF0964;
+  --secondary-color: #0F0F0F;
+  --background-primary: #E8E8E8;
+  --background-secondary: #b8b8b8;
+  --plusdev-red: #920000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--secondary-color);
+  padding: 16px;
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+      @content;
+  }
+}
+
+@mixin tall-mobile {
+  @media (max-width: 480px) and (min-height: 680px) {
+      @content;
+  }
+}
+
+@mixin small-device {
+  @media (min-width: 481px) and (max-width: 767px) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: 992px) and (max-width: 1366px) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1367px) and (max-width: 1920px) {
+      @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: 1921px) {
+      @content;
+  }
+}
+
+@include laptop {
+  body {
+      padding: 128px;
+  }
+}
+
+@include desktop {
+  body {
+      padding: 128px;
+  }
+}
+
+@include large-desktop {
+  body {
+      padding: 128px 256px 256px 256px;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+      transform: translateY(-100%);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(100%);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideInRTL {
+  0% {
+      transform: translateX(200%);
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideInLTR {
+  0% {
+      transform: translateX(-200%);
+  }
+
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.slideInLTR {
+  animation: slideInLTR 1s ease-in-out;
+}
+
+.slideInRTL {
+  animation: slideInRTL 1s ease-in-out;
+}
+
+.slideUp {
+  animation: slideUp 1s ease-in-out;
+}

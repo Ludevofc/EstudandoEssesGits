@@ -1,0 +1,54 @@
+{
+    "en": {
+        "header": {
+            "contact": "Contact",
+            "projects": "Projects",
+            "about": "About",
+            "home": "Home"
+        },
+        "home": {
+            "title": "Fullstack Developer",
+            "subtitle": "Hello, I'm Jullie"
+        },
+        "about": {
+            "title": "Who is Jullie?",
+            "subtitle": "About",
+            "bio": "I AM A SOFTWARE ENGINEER ENTHUSIAST WITH A SPECIAL PASSION FOR QUALITY. WITH A SOLID TRAINING IN SOFTWARE DEVELOPMENT, I HAVE ACQUIRED EXPERIENCE WORKING WITH VARIOUS TECHNOLOGIES, INCLUDING JAVASCRIPT, TYPESCRIPT, REACT, ANGULAR, JAVA AND SPRING FRAMEWORK. THIS EXPERIENCE ALLOWED ME TO HAVE A COMPREHENSIVE AND INTEGRATED VIEW OF THE PROJECTS I AM INVOLVED IN, FROM DESIGN TO FINAL DELIVERY."
+        },
+        "projects": {
+            "title": "Finished Projects",
+            "subtitle": "Some"
+        },
+        "footer": {
+            "copyrightTitle": "© 2023, Jullie Paixão. All rights reserved.",
+            "copyrightSubtitle": "Powered by",
+            "copyrightStrong": "+Dev"
+        }
+    },
+    "pt": {
+        "header": {
+            "contact": "Contato",
+            "projects": "Projetos",
+            "about": "Sobre",
+            "home": "Início"
+        },
+        "home": {
+            "title": "Desenvolvedora Fullstack",
+            "subtitle": "Olá, eu sou a Jullie"
+        },
+        "about": {
+            "title": "Quem sou eu?",
+            "subtitle": "Sobre",
+            "bio": "SOU UMA ENTUSIASTA DA ENGENHARIA DE SOFTWARE COM UMA PAIXÃO ESPECIAL POR QUALIDADE. COM UMA SÓLIDA FORMAÇÃO EM DESENVOLVIMENTO DE SOFTWARE, ADQUIRI EXPERIÊNCIA TRABALHANDO COM DIVERSAS TECNOLOGIAS, INCLUINDO JAVASCRIPT, TYPESCRIPT, REACT, ANGULAR, JAVA E SPRING FRAMEWORK. ESSA EXPERIÊNCIA ME PERMITIU TER UMA VISÃO ABRANGENTE E INTEGRADA DOS PROJETOS EM QUE ESTOU ENVOLVIDA, DESDE O DESIGN ATÉ A ENTREGA FINAL."
+        },
+        "projects": {
+            "title": "Projetos Finalizados",
+            "subtitle": "Alguns"
+        },
+        "footer": {
+            "copyrightTitle": "© 2023, Jullie Paixão. Todos os direitos reservados.",
+            "copyrightSubtitle": "Desenvolvido por",
+            "copyrightStrong": "+Dev"
+        }
+    }
+}

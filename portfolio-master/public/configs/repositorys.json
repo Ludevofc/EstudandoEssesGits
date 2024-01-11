@@ -1,0 +1,96 @@
+{
+    "en": [
+        {
+            "id": 1,
+            "title": "My",
+            "subtitle": "Portfolio",
+            "description": "As a Fullstack Developer, I am pleased to present my portfolio, which reflects my experience and skills in web development. With a passion for creating innovative and functional solutions, my portfolio demonstrates my knowledge in both frontend and backend development. On the frontend I create attractive and responsive user interfaces, ensuring an exceptional user experience. My focus is on creating intuitive, accessible and visually appealing designs. On the backend, I develop scalable APIs, ensuring applications are fast and reliable. My portfolio is an end-to-end project that demonstrates my web development skills and my commitment to creating high-quality solutions. I am proud to have created a portfolio that reflects my passion for web development and my dedication to creating innovative and functional solutions.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168292371256070224/portfolioproject.png?ex=65513c0f&is=653ec70f&hm=bd57b56e3c44681fd5243c6c1475f8306b214f43ca01daa14ec8075eae1ecfd4&",
+            "githubUrl": "https://github.com/julliepx/portfolio",
+            "previewUrl": "https://jullie.dev"
+        },
+        {
+            "id": 2,
+            "title": "Character",
+            "subtitle": "Visual",
+            "description": "Introducing our FiveM feature, a complete module that offers an immersive character creation and customization experience for your server. With features like Barber Shop, Clothing Shop, Tattoo Shop, and Nail Shop, players have the freedom to customize their characters to their preferences. Character Creation: With this feature, players can create their characters from scratch, choosing characteristics such as gender, facial appearance, eye color, skin color, and more. They can explore a wide variety of options to create a unique and authentic character. Barber Shop: Our feature includes a virtual barber shop where players can change their hairstyle, hair color, beard and mustache. They can try out different haircuts and beard styles to reflect their character's personality. Clothing Store: With the clothing store, players have access to a wide selection of clothing, shoes, and accessories to customize their character's look. They can choose from different styles, colors and brands to create a unique and stylish look. Tattoo Shop: Our feature also offers a tattoo shop, where players can choose from a variety of designs and styles to tattoo their characters. They can customize the location, size and color of tattoos to express your individuality. Manicure: With the manicure feature, players can customize their character's nails by choosing from a variety of nail colors, designs, and styles. They can add a finishing touch to your character's look with elegant and stylish nails. This feature of FiveM provides a complete customization experience for players, allowing them to create unique and expressive characters. With the combination of Character Creation, Barber Shop, Clothing Shop, Tattoo Shop, and Nail Shop, your server will offer a more immersive and personalized roleplaying experience for players.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168459556981067836/charactervisualproject.png?ex=6551d7c3&is=653f62c3&hm=2f333f7e397c857dd94c335a8d497fd8778fd9ed7bf65094a7cb4abfb0ddf645&",
+            "githubUrl": "",
+            "previewUrl": "https://www.youtube.com/watch?v=8_Kd0mV1KNE"
+        },
+        {
+            "id": 3,
+            "title": "Tebex",
+            "subtitle": "Webstore",
+            "description": "Tebex is an e-commerce platform specializing in providing payment and store management solutions for gaming communities. In the project, I was responsible for designing and implementing an attractive and intuitive user interface for the Tebex store. I used technologies such as React, HTML, CSS and Typescript to create a responsive and friendly design for mobile and desktop devices. I worked together with the other designer using Figma so that the store's visual identity was consistent with the brand and the user experience was pleasant and engaging. I implemented features like easy navigation, advanced search, product filters and a functional shopping cart. Throughout the project, I maintained a constant focus on optimizing performance and ensuring the store was fast and responsive. I performed rigorous testing to ensure compatibility with different browsers and devices. In the end, I delivered a high-quality frontend project for the Brunx store, providing users with a pleasant and intuitive shopping experience. I am proud to have contributed to the success of the project and to have helped boost the store's sales and growth.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1167653503154532412/tebexproject.png?ex=654ee911&is=653c7411&hm=09498d3d80de0f18eb997042d31f802f6ae5cdceab375b25c7741ba63ebaaeda&",
+            "githubUrl": "",
+            "previewUrl": "https://www.brunxmods.com/"
+        },
+        {
+            "id": 4,
+            "title": "Alpha",
+            "subtitle": "Birdz",
+            "description": "Alphabirdz is an innovative webapp designed for birding enthusiasts to record and share their bird sightings in an easy and intuitive way. With a user-friendly interface and powerful features, Alphabirdz offers a complete experience for nature lovers. When accessing Alphabirdz, users can create a personalized account and start recording their bird sightings. The webapp offers a wide range of fields to capture detailed information such as the species of bird, date and location of the sighting, as well as allowing users to add notes and photos to enrich their observations. In short, Alphabirdz is a complete and engaging webapp for recording bird sightings, offering an intuitive platform for birding enthusiasts to share their experiences, learn from each other and connect in a nature-loving community.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1167660154611843094/alphabirdzproject.png?ex=654eef42&is=653c7a42&hm=b60375aa64abd2354ea4b6922e07b68795ed662f5abddcfbb4c953de00ecdd0a&",
+            "githubUrl": "https://github.com/julliepx/alphabirdz-angular",
+            "previewUrl": ""
+        },
+        {
+            "id": 5,
+            "title": "Wise",
+            "subtitle": "Robot",
+            "description": "I present our Discord BOT developed especially to assist administrators and moderators in managing a Roleplay server on FiveM. With a wide range of features and commands, the BOT automates essential tasks to ensure a safe and organized environment. Administrators and moderators can use specific commands to perform actions such as: Set Cars: With the appropriate command, it is possible to set specific cars for players or groups, allowing unique customization for each player on the server. Manage VIPs: BOT allows administrators and moderators to assign VIP privileges to players, granting exclusive benefits and special recognition within the server. Ban and Unban: With simple commands, it is possible to ban players who violate the server rules, ensuring a safe environment free from inappropriate behavior. Furthermore, the BOT also allows you to unban players if necessary. Automate Tasks: The BOT can be programmed to perform automated tasks such as clearing chat, sending welcome messages to new players, managing channel permissions, and more. This saves administrators and moderators time and effort, allowing them to focus on other important activities.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168405213451931781/wiseevoproject.png?ex=6551a526&is=653f3026&hm=3965ea7adb2dda3424ec38f8c3c4b65df7ed6ad59d7261f807ab29f7f5801fc1&",
+            "githubUrl": "https://github.com/julliepx/wiseevobot",
+            "previewUrl": ""
+        }
+    ],
+    "pt": [
+        {
+            "id": 1,
+            "title": "Meu",
+            "subtitle": "Portfolio",
+            "description": "Como Fullstack Developer, tenho o prazer de apresentar meu portfólio, que reflete minha experiência e habilidades em desenvolvimento web. Com uma paixão pela criação de soluções inovadoras e funcionais, meu portfólio demonstra meu conhecimento tanto no desenvolvimento frontend quanto no backend. No frontend crio interfaces de usuário atraentes e responsivas, garantindo uma experiência de usuário excepcional. Meu foco está em criar designs intuitivos, acessíveis e visualmente atraentes. No backend, desenvolvo APIs escaláveis, garantindo que os aplicativos sejam rápidos e confiáveis. Meu portfólio é um projeto de ponta a ponta que demonstra minhas habilidades em desenvolvimento web e meu compromisso em criar soluções de alta qualidade. Estou orgulhosa de ter criado um portfólio que reflete minha paixão pelo desenvolvimento web e minha dedicação em criar soluções inovadoras e funcionais.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168292371256070224/portfolioproject.png?ex=65513c0f&is=653ec70f&hm=bd57b56e3c44681fd5243c6c1475f8306b214f43ca01daa14ec8075eae1ecfd4&",
+            "githubUrl": "https://github.com/julliepx/portfolio",
+            "previewUrl": "https://jullie.dev"
+        },
+        {
+            "id": 2,
+            "title": "Character",
+            "subtitle": "Visual",
+            "description": "Apresentamos nossa resource de FiveM, um módulo completo que oferece uma experiência imersiva de criação de personagem e personalização para o seu servidor. Com recursos como Barbearia, Loja de Roupas, Loja de Tatuagens e Manicure, os jogadores têm a liberdade de personalizar seus personagens de acordo com suas preferências. Criação de Personagem: Com esse recurso, os jogadores podem criar seus personagens do zero, escolhendo características como gênero, aparência facial, cor dos olhos, cor da pele e muito mais. Eles podem explorar uma ampla variedade de opções para criar um personagem único e autêntico. Barbearia: Nossa resource inclui uma barbearia virtual, onde os jogadores podem alterar o estilo de cabelo, cor do cabelo, barba e bigode. Eles podem experimentar diferentes cortes de cabelo e estilos de barba para refletir a personalidade do seu personagem. Loja de Roupas: Com a loja de roupas, os jogadores têm acesso a uma ampla seleção de roupas, sapatos e acessórios para personalizar o visual do seu personagem. Eles podem escolher entre diferentes estilos, cores e marcas para criar um visual único e estiloso. Loja de Tatuagens: Nossa resource também oferece uma loja de tatuagens, onde os jogadores podem escolher entre uma variedade de desenhos e estilos para tatuar seus personagens. Eles podem personalizar a localização, tamanho e cor das tatuagens para expressar sua individualidade. Manicure: Com o recurso de manicure, os jogadores podem personalizar as unhas dos seus personagens, escolhendo entre uma variedade de cores, desenhos e estilos de unhas. Eles podem adicionar um toque final ao visual do seu personagem com unhas elegantes e estilosas. Essa resource de FiveM proporciona uma experiência completa de personalização para os jogadores, permitindo que eles criem personagens únicos e expressivos. Com a combinação da Criação de Personagem, Barbearia, Loja de Roupas, Loja de Tatuagens e Manicure, seu servidor oferecerá uma experiência de roleplay mais imersiva e personalizada para os jogadores.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168459556981067836/charactervisualproject.png?ex=6551d7c3&is=653f62c3&hm=2f333f7e397c857dd94c335a8d497fd8778fd9ed7bf65094a7cb4abfb0ddf645&",
+            "githubUrl": "",
+            "previewUrl": "https://www.youtube.com/watch?v=8_Kd0mV1KNE"
+        },
+        {
+            "id": 3,
+            "title": "Tebex",
+            "subtitle": "Webstore",
+            "description": "A Tebex é uma plataforma de comércio eletrônico especializada em fornecer soluções de pagamento e gerenciamento de lojas para comunidades de jogos. No projeto, fui responsável por projetar e implementar uma interface de usuário atraente e intuitiva para a loja da Tebex. Utilizei tecnologias como React, HTML, CSS e Typescript para criar um design responsivo e amigável para dispositivos móveis e desktop. Trabalhei juntamente com o outro designer utilizando o Figma para que a identidade visual da loja fosse consistente com a marca e que a experiência do usuário fosse agradável e envolvente. Implementei recursos como navegação fácil, pesquisa avançada, filtros de produtos e um carrinho de compras funcional. Durante o projeto, mantive um foco constante na otimização de desempenho e na garantia de que a loja fosse rápida e responsiva. Realizei testes rigorosos para garantir a compatibilidade com diferentes navegadores e dispositivos. No final, entreguei um projeto de frontend de alta qualidade para a loja do Brunx, proporcionando aos usuários uma experiência de compra agradável e intuitiva. Estou orgulhosa de ter contribuído para o sucesso do projeto e de ter ajudado a impulsionar as vendas e o crescimento da loja.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1167653503154532412/tebexproject.png?ex=654ee911&is=653c7411&hm=09498d3d80de0f18eb997042d31f802f6ae5cdceab375b25c7741ba63ebaaeda&",
+            "githubUrl": "",
+            "previewUrl": "https://www.brunxmods.com/"
+        },
+        {
+            "id": 4,
+            "title": "Alpha",
+            "subtitle": "Birdz",
+            "description": "O Alphabirdz é um webapp inovador projetado para entusiastas de observação de pássaros registrarem e compartilharem seus avistamentos de aves de forma fácil e intuitiva. Com uma interface amigável e recursos poderosos, o Alphabirdz oferece uma experiência completa para os amantes da natureza. Ao acessar o Alphabirdz, os usuários podem criar uma conta personalizada e começar a registrar seus avistamentos de pássaros. O webapp oferece uma ampla variedade de campos para capturar informações detalhadas, como a espécie de pássaro, a data e a localização do avistamento, além de permitir que os usuários adicionem notas e fotos para enriquecer suas observações. Em resumo, o Alphabirdz é um webapp completo e envolvente para registro de avistamentos de pássaros, oferecendo uma plataforma intuitiva para os entusiastas da observação de aves compartilharem suas experiências, aprenderem uns com os outros e se conectarem em uma comunidade apaixonada pela natureza.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1167660154611843094/alphabirdzproject.png?ex=654eef42&is=653c7a42&hm=b60375aa64abd2354ea4b6922e07b68795ed662f5abddcfbb4c953de00ecdd0a&",
+            "githubUrl": "https://github.com/julliepx/alphabirdz-angular",
+            "previewUrl": ""
+        },
+        {
+            "id": 5,
+            "title": "Wise",
+            "subtitle": "Robot",
+            "description": "Apresento o nosso BOT de Discord desenvolvido especialmente para auxiliar os administradores e moderadores no gerenciamento de um servidor de Roleplay no FiveM. Com uma ampla gama de recursos e comandos, o BOT automatiza tarefas essenciais para garantir um ambiente seguro e organizado. Os administradores e moderadores podem usar comandos específicos para executar ações como: Setar Carros: Com o comando apropriado, é possível definir carros específicos para jogadores ou grupos, permitindo uma personalização única para cada jogador no servidor. Gerenciar VIPs: O BOT permite que os administradores e moderadores atribuam privilégios VIP a jogadores, concedendo benefícios exclusivos e reconhecimento especial dentro do servidor. Banir e Desbanir: Com comandos simples, é possível banir jogadores que violam as regras do servidor, garantindo um ambiente seguro e livre de comportamentos inadequados. Além disso, o BOT também permite desbanir jogadores, caso necessário. Automatizar Tarefas: O BOT pode ser programado para executar tarefas automatizadas, como limpar o chat, enviar mensagens de boas-vindas a novos jogadores, gerenciar permissões de canais e muito mais. Isso economiza tempo e esforço dos administradores e moderadores, permitindo que se concentrem em outras atividades importantes.",
+            "imageUrl": "https://cdn.discordapp.com/attachments/1045884026650636409/1168405213451931781/wiseevoproject.png?ex=6551a526&is=653f3026&hm=3965ea7adb2dda3424ec38f8c3c4b65df7ed6ad59d7261f807ab29f7f5801fc1&",
+            "githubUrl": "https://github.com/julliepx/wiseevobot",
+            "previewUrl": ""
+        }
+    ]
+}

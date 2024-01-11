@@ -1,0 +1,1 @@
+ALTER TABLE vote_session ADD COLUMN status VARCHAR(50);

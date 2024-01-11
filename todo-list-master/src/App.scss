@@ -1,0 +1,49 @@
+.new-task-container {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: -26px;
+  align-items: center;
+  gap: 8px;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 64px;
+  gap: 24px;
+
+  .tasks-infos {
+    display: flex;
+    justify-content: space-between;
+
+    .info {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: var(--font-size-medium);
+      font-weight: var(--font-weight-bold);
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background-color: var(--gray-400);
+        padding: 2px 8px;
+        font-size: var(--font-size-small);
+        color: var(--gray-200);
+      }
+    }
+
+    .created p {
+      color: var(--blue);
+    }
+
+    .completed {
+      color: var(--purple);
+    }
+  }
+}

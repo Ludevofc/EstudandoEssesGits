@@ -1,0 +1,1 @@
+ALTER TABLE affiliated RENAME COLUMN canVote TO can_vote;
