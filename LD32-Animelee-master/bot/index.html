@@ -1,0 +1,63 @@
+<head>
+	<title>Ani-melee bot client</title>
+
+	<!--embed glmatrix first-->
+	<script type="text/javascript" src="glMatrix/gl-matrix.js"></script>
+
+	<script type="text/javascript" src="code/collider.js"></script>
+	<script type="text/javascript" src="code/game.js"></script>
+	<script type="text/javascript" src="code/quadTree.js"></script>
+	<script type="text/javascript" src="code/svgColParse.js"></script>
+
+	<script type="text/javascript" src="code/clientScene.js"></script>
+	<script type="text/javascript" src="code/gameScene.js"></script>
+	<script type="text/javascript" src="code/gameUI.js"></script>
+	<script type="text/javascript" src="code/particleHandlers.js"></script>
+
+
+	<!-- entities -->
+	<script type="text/javascript" src="code/waypoints.js"></script>
+	<script type="text/javascript" src="code/aiplayer.js"></script>
+	<script type="text/javascript" src="code/ropeObj.js"></script>
+	<script type="text/javascript" src="code/itemSpawn.js"></script>
+	<script type="text/javascript" src="code/cog.js"></script>
+
+	
+	<style>
+	body {
+		font-family: sans-serif;
+	}
+
+	#game {
+	}
+
+	.notice {
+		font-size: 20px;
+		font-style: italic;
+	}
+
+	.footnote {
+		color: gray;
+	}
+
+	#started {
+		color: #00AAFF;
+	}
+	</style>
+</head>
+
+<body>
+
+	This page lets you connect bots to the Ani-Melee server to play with if you don't have (many) other people to play with.<br><br>
+
+	<span class="notice">Keep this page open in a SEPARATE WINDOW in the background but not minimized!</span><br><br>
+
+	Total Bots (max 6): <input type="text" id="bots" value="4"></input><br>
+
+	<button onclick="if (window.ld32 == null) { window.ld32 = new game(document.getElementById('game')); document.getElementById('btn').disabled=true; document.getElementById('started').innerHTML='bots started! you can now play the game :)';}" id="btn">Start bots</button> <span id="started"></span><br><br>
+
+	<span class="footnote">NOTE: If you connect too many bots or connect bots when there are already many people on the server, I might have to permaban you! from all my games! forever! be warned 8O|</span>
+
+	<canvas width="900" height="600" id="game"></canvas><br>
+	<!--welcome to the danger zone-->
+</body>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="code/game.js"></script>
+<script type="text/javascript" src="code/res.js"></script>
+<script type="text/javascript" src="code/netFacade.js"></script>
+<script type="text/javascript" src="code/rng.js"></script>
+
+<script type="text/javascript" src="code/scenes/ingameScene.js"></script>
+<script type="text/javascript" src="code/scenes/pick1Scene.js"></script>
+<script type="text/javascript" src="code/scenes/pick2Scene.js"></script>
+
+<script type="text/javascript" src="code/entities/genericSelector.js"></script>
+<script type="text/javascript" src="code/entities/abilityIcon.js"></script>
+<script type="text/javascript" src="code/entities/sun.js"></script>
+<script type="text/javascript" src="code/entities/plant.js"></script>
+<script type="text/javascript" src="code/entities/failcode.js"></script>
+
+<script type="text/javascript" src="code/abilities/offensive.js"></script>
+<script type="text/javascript" src="code/abilities/defensive.js"></script>
+<script type="text/javascript" src="code/abilities/ultimates.js"></script>
+
+<script type="text/javascript" src="code/buffs/offensiveBuffs.js"></script>
+<script type="text/javascript" src="code/buffs/defensiveBuffs.js"></script>
+<script type="text/javascript" src="code/buffs/ultBuffs.js"></script>
+
+<script type="text/javascript" src="glMatrix/gl-matrix.js"></script>
+
+<style>
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	background-image: url("pagebg.png");
+	background-position: center center;
+	margin: 0px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#container {
+	width: 100%;
+	height: 100%;
+}
+
+
+#whitestrip {
+	position: absolute;
+	left: 50%;
+	width: 820px;
+	height: 100%;
+	margin-left: -410px;
+	background-color: rgba(255,255,255,0.25);
+}
+
+#center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 800px;
+	margin-top: -300px;
+	margin-left: -400px;
+}
+
+#game {
+	margin: -1px;
+	margin-left:240px;
+	border: 1px white solid;
+	background-image: url("waitbg.png");
+	background-size: 100% 100%;
+}
+
+#game:focus {
+	outline: none;
+}
+
+#name {
+	position: absolute;
+	margin-top: -2px;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	font: bold 16px Verdana;
+	color: white;
+	color: #00468C;
+}
+
+#inst {
+	position: absolute;
+	margin-top: -20px;
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	font: bold 15px Verdana;
+	color: white;
+	color: #00468C;
+}
+
+a {
+	color: #0080FF;
+}
+
+</style>
+
+</head>
+<body onload = "var myGame = new game(document.getElementById('game'))">
+
+<div id = "container">
+<div id = "whitestrip"></div>
+
+<div id = "center">
+	<div id="inst">
+		X or right to cycle your selection. Z to choose! Get your flower to the top before the other dude!
+	</div>
+	<canvas id="game" width="320" height="568" tabindex="0"></canvas>
+	<div id="name">
+	Made by <a href="http://twitter.com/RHY3756547">RHY3756547</a> for the <a href="http://www.ludumdare.com/compo/">Ludum Dare 48h compo.</a>
+	</div>
+</div>
+</div>
+
+</body>
+</html>

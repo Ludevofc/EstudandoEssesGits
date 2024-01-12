@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32CBA4DB-99D8-4D1E-9420-E9B0D2359802}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Simitone.Windows</RootNamespace>
+    <AssemblyName>Simitone.Windows</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="GameLocator\ILocator.cs" />
+    <Compile Include="GameLocator\LinuxLocator.cs" />
+    <Compile Include="GameLocator\MacOSLocator.cs" />
+    <Compile Include="GameLocator\WindowsLocator.cs" />
+    <Compile Include="GameStartProxy.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\MonogameLinker.cs" />
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\obj\Linux\AnyCPU\Release\MonoGame.Framework.dll" Condition="Exists('..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\obj\Linux\AnyCPU\Release\MonoGame.Framework.dll')">
+      <Link>Monogame\Linux\MonoGame.Framework.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\obj\WindowsGL\AnyCPU\Release\MonoGame.Framework.dll">
+      <Link>Monogame\WindowsGL\MonoGame.Framework.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\obj\Windows\AnyCPU\Release\MonoGame.Framework.dll">
+      <Link>Monogame\Windows\MonoGame.Framework.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.D3DCompiler.dll">
+      <Link>Monogame\Windows\SharpDX.D3DCompiler.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.D3DCompiler.xml">
+      <Link>Monogame\Windows\SharpDX.D3DCompiler.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct2D1.dll">
+      <Link>Monogame\Windows\SharpDX.Direct2D1.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct2D1.xml">
+      <Link>Monogame\Windows\SharpDX.Direct2D1.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct3D11.dll">
+      <Link>Monogame\Windows\SharpDX.Direct3D11.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.Direct3D11.xml">
+      <Link>Monogame\Windows\SharpDX.Direct3D11.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.dll">
+      <Link>Monogame\Windows\SharpDX.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.DXGI.dll">
+      <Link>Monogame\Windows\SharpDX.DXGI.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\SharpDX.DXGI.xml">
+      <Link>Monogame\Windows\SharpDX.DXGI.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.MediaFoundation.dll">
+      <Link>Monogame\Windows\SharpDX.MediaFoundation.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.MediaFoundation.xml">
+      <Link>Monogame\Windows\SharpDX.MediaFoundation.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.XAudio2.dll">
+      <Link>Monogame\Windows\SharpDX.XAudio2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.XAudio2.xml">
+      <Link>Monogame\Windows\SharpDX.XAudio2.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.XInput.dll">
+      <Link>Monogame\Windows\SharpDX.XInput.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.XInput.xml">
+      <Link>Monogame\Windows\SharpDX.XInput.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\ThirdParty\Dependencies\SharpDX\net40\SharpDX.xml">
+      <Link>Monogame\Windows\SharpDX.xml</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sdl2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="soft_oal.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\MonoGame.Framework.Net.WindowsGL.csproj">
+      <Project>{6d6009f4-0afb-4806-89d7-7945f20270f5}</Project>
+      <Name>MonoGame.Framework.Net.WindowsGL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\Other\libs\FSOMonoGame\MonoGame.Framework\MonoGame.Framework.Windows.csproj">
+      <Project>{7de47032-a904-4c29-bd22-2d235e8d91ba}</Project>
+      <Name>MonoGame.Framework.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\Other\libs\mp3sharp\mp3sharp\Mp3Sharp.csproj">
+      <Project>{834cab58-648d-47cc-ac6f-d01c08c809a4}</Project>
+      <Name>Mp3Sharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\FSO.IDE\FSO.IDE.csproj">
+      <Project>{5deb20eb-1eb7-48f9-922c-463abae56e63}</Project>
+      <Name>FSO.IDE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\FSO.SimAntics.JIT\FSO.SimAntics.JIT.csproj">
+      <Project>{b8ab3711-7b4f-4126-9bf3-4ddde9475b74}</Project>
+      <Name>FSO.SimAntics.JIT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\FSO.UI\FSO.UI.csproj">
+      <Project>{73e2ad5b-720b-4ef3-9b7c-55931d0ec693}</Project>
+      <Name>FSO.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\tso.common\FSO.Common.csproj">
+      <Project>{c42962a1-8796-4f47-9dcd-79ed5904d8ca}</Project>
+      <Name>FSO.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\tso.content\FSO.Content.csproj">
+      <Project>{c0068df7-f2e8-4399-846d-556bf9a35c00}</Project>
+      <Name>FSO.Content</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\tso.files\FSO.Files.csproj">
+      <Project>{18583453-a970-4ac5-83b1-2d6bfdf94c24}</Project>
+      <Name>FSO.Files</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\tso.simantics\FSO.SimAntics.csproj">
+      <Project>{5eddefd2-c850-49c1-812d-ddeff09125ef}</Project>
+      <Name>FSO.SimAntics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\FreeSO\TSOClient\tso.world\FSO.LotView.csproj">
+      <Project>{b1a6e4c2-e080-4c34-a604-d11b5296a9b8}</Project>
+      <Name>FSO.LotView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Simitone.Client\Simitone.Client.csproj">
+      <Project>{0f20013d-0610-4573-a346-1c5a461b0ba0}</Project>
+      <Name>Simitone.Client</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

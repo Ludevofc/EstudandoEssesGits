@@ -1,0 +1,38 @@
+<head>
+	<title>game!!!</title>
+	<script src="game.js"></script>
+	<style>
+
+	body {
+		background-color: #000000;
+		margin:0;
+		padding:0;
+		font-family: "Gill Sans MT", "Gill Sans", sans-serif;
+	}
+
+	#container {
+		position: absolute;
+		left:50%;
+		top: 50%;
+		margin-left: -400px;
+		margin-top: -315px;
+	}
+
+	#game {
+		border: 1px solid #666666;
+	}
+	#instructions {
+		text-align: center;
+		color: #999999;
+	}
+
+	</style>
+</head>
+<body onload="game = new gogogogameee(document.getElementById('game'), '')">
+	
+	<div id="container">
+		<div id="instructions">Collect all the Treasure then nab the Gem! Arrow keys to move/(wall)jump, X key to fire rockets, R key to restart!</div> 
+		<canvas id="game" width="800" height="600"></canvas><br>
+		<input type="button" value="Fullscreen" onclick="fullscreen();"></input>
+	</div>
+</body>

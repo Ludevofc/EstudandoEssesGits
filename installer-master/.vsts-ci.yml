@@ -1,0 +1,302 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - release/*
+    - internal/release/3.*
+
+variables:
+# These two variables are used by CopyToLatest.
+# when CopyToLatest goes away in favor of improvements to dotnet-install, this can be removed.
+- name: _PublishBlobFeedUrl
+  value: https://dotnetcli.blob.core.windows.net/dotnet/index.json
+- name: _PublishChecksumsBlobFeedUrl
+  value: https://dotnetclichecksums.blob.core.windows.net/dotnet/index.json
+- name: _PublishUsingPipelines
+  value: false
+- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+  - group: DotNet-DotNetCli-Storage
+  - group: DotNet-Blob-Feed
+  - group: DotNet-Installer-SDLValidation-Params
+  - name: _PublishUsingPipelines
+    value: true
+
+# Default to running tests in PRs and public CI, but not in official builds
+- name: _WindowsTestArg
+  value: '-test'
+- name: _NonWindowsTestArg
+  value: '--test'
+- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+  - name: _WindowsTestArg
+    value: ''
+  - name: _NonWindowsTestArg
+    value: ''
+
+stages:
+- stage: build
+  jobs:
+  - template: /eng/build.yml
+    parameters:
+      agentOs: Windows_NT
+      pool:
+        ${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
+          vmImage: vs2017-win2016
+        ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+          name: NetCoreInternal-Pool
+          queue: buildpool.windows.10.amd64.vs2017
+      timeoutInMinutes: 180
+      strategy:
+        matrix:
+          # Public-only builds
+          ${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
+            Build_Debug_x86:
+              _BuildConfig: Debug
+              _BuildArchitecture: x86
+              _DOTNET_CLI_UI_LANGUAGE: ''
+              _AdditionalBuildParameters: ''
+              _TestArg: $(_WindowsTestArg)
+            Build_ES_Debug_x64:
+              _BuildConfig: Debug
+              _BuildArchitecture: x64
+              _DOTNET_CLI_UI_LANGUAGE: es
+              _AdditionalBuildParameters: ''
+              _TestArg: $(_WindowsTestArg)
+          # Internal-only builds
+          ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+            Build_Release_x86:
+              _BuildConfig: Release
+              _BuildArchitecture: x86
+              _DOTNET_CLI_UI_LANGUAGE: ''
+              _AdditionalBuildParameters: ''
+              _TestArg: $(_WindowsTestArg)
+          # Always run builds
+          Build_Release_x64:
+            _BuildConfig: Release
+            _BuildArchitecture: x64
+            _DOTNET_CLI_UI_LANGUAGE: ''
+            _AdditionalBuildParameters: '/p:PublishInternalAsset=true'
+            _TestArg: $(_WindowsTestArg)
+          Build_Release_arm:
+            _BuildConfig: Release
+            _BuildArchitecture: arm
+            _DOTNET_CLI_UI_LANGUAGE: ''
+            _AdditionalBuildParameters: ''
+            # Never run tests on arm64
+            _TestArg: ''
+          Build_Release_arm64:
+            _BuildConfig: Release
+            _BuildArchitecture: arm64
+            _DOTNET_CLI_UI_LANGUAGE: ''
+            _AdditionalBuildParameters: ''
+            # Never run tests on arm64
+            _TestArg: ''
+
+  - template: /eng/build.yml
+    parameters:
+      agentOs: Linux
+      pool:
+        ${{ if eq(variables['System.TeamProject'], 'public') }}:
+          name: NetCorePublic-Pool
+          queue: BuildPool.Ubuntu.1604.Amd64.Open
+        ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+          name: NetCoreInternal-Pool
+          queue: BuildPool.Ubuntu.1604.Amd64
+      timeoutInMinutes: 180
+      strategy:
+        matrix:
+          ${{ if or(eq(variables['System.TeamProject'], 'public'), in(variables['Build.Reason'], 'PullRequest')) }}:
+            Build_Ubuntu_16_04_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker ubuntu.16.04'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Ubuntu_18_04_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker ubuntu.18.04'
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Fedora_29_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker fedora.29'
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_CentOS_7_1_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker centos'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Debian_Stretch_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker debian'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Rhel_7_2_Release_x64:
+              _BuildConfig: Release
+              _DockerParameter: '--docker rhel'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Arm_Debug:
+              _BuildConfig: Debug
+              _DockerParameter: ''
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: '--runtime-id linux-arm'
+              _BuildArchitecture: 'arm'
+              # Never run tests on arm64
+              _TestArg: ''
+            Build_Arm64_Debug:
+              _BuildConfig: Debug
+              _DockerParameter: ''
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: '--runtime-id linux-arm64'
+              _BuildArchitecture: 'arm64'
+              # Never run tests on arm64
+              _TestArg: ''
+            Build_Linux_musl_Debug_x64:
+              _BuildConfig: Debug
+              _DockerParameter: '--docker alpine.3.6'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: '--runtime-id linux-musl-x64'
+              _BuildArchitecture: 'x64'
+              _TestArg: $(_NonWindowsTestArg)
+          ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+            Build_Arm_Release:
+              _BuildConfig: Release
+              _DockerParameter: ''
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: '--runtime-id linux-arm'
+              _BuildArchitecture: 'arm'
+              # Never run tests on arm64
+              _TestArg: ''
+            Build_Arm64_Release:
+              _BuildConfig: Release
+              _DockerParameter: ''
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: '--runtime-id linux-arm64'
+              _BuildArchitecture: 'arm64'
+              # Never run tests on arm64
+              _TestArg: ''
+            Build_Linux_musl_Release_x64:
+              _BuildConfig: Release
+              _DockerParameter: '--docker alpine.3.6'
+              _LinuxPortable: ''
+              _RuntimeIdentifier: '--runtime-id linux-musl-x64'
+              _BuildArchitecture: 'x64'
+            Build_Linux_Portable_Deb_Release_x64:
+              _BuildConfig: Release
+              _DockerParameter: '--docker ubuntu.16.04'
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              # Do not publish zips and tarballs. The linux-x64 binaries are
+              # already published by Build_LinuxPortable_Release_x64
+              _AdditionalBuildParameters: '/p:PublishBinariesAndBadge=false'
+              _TestArg: $(_NonWindowsTestArg)
+            Build_Linux_Portable_Rpm_Release_x64:
+              _BuildConfig: Release
+              _DockerParameter: '--docker rhel'
+              _LinuxPortable: '--linux-portable'
+              _RuntimeIdentifier: ''
+              _BuildArchitecture: 'x64'
+              # Do not publish zips and tarballs. The linux-x64 binaries are
+              # already published by Build_LinuxPortable_Release_x64
+              _AdditionalBuildParameters: '/p:PublishBinariesAndBadge=false'
+              _TestArg: $(_NonWindowsTestArg)
+          Build_LinuxPortable_Release_x64:
+            _BuildConfig: Release
+            _DockerParameter: ''
+            _LinuxPortable: '--linux-portable'
+            _RuntimeIdentifier: ''
+            _BuildArchitecture: 'x64'
+            _TestArg: $(_NonWindowsTestArg)
+
+  - template: /eng/build.yml
+    parameters:
+      agentOs: Darwin
+      pool: 
+        name: Hosted macOS
+      timeoutInMinutes: 180
+      strategy:
+        matrix:
+          Build_Release:
+            _BuildConfig: Release
+            _TestArg: $(_NonWindowsTestArg)
+
+  # https://github.com/dotnet/core-sdk/issues/248
+  # - template: /eng/build.yml
+  #   parameters:
+  #     agentOs: FreeBSD
+  #     queue: 
+  #       name: dnceng-freebsd-internal
+  #       timeoutInMinutes: 180
+  #       matrix:
+  #         Build_Release:
+  #           _BuildConfig: Release
+  #           _AdditionalBuildParameters: '/p:DisableSourceLink=true /p:DISABLE_CROSSGEN=true'
+
+  - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+    - template: /eng/common/templates/job/publish-build-assets.yml
+      parameters:
+        dependsOn:
+          - Windows_NT
+          - Linux
+          - Darwin
+        publishUsingPipelines: true
+        pool:
+          vmImage: vs2017-win2016
+
+- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+  - template: eng\common\templates\post-build\post-build.yml
+    parameters:
+      enableSymbolValidation: false
+      enableSigningValidation: false
+      enableNugetValidation: false
+      enableSourceLinkValidation: false
+      publishInstallersAndChecksums: true
+      SDLValidationParameters:
+        enable: false
+        params: ' -SourceToolsList @("policheck","credscan")
+        -TsaInstanceURL $(_TsaInstanceURL)
+        -TsaProjectName $(_TsaProjectName)
+        -TsaNotificationEmail $(_TsaNotificationEmail)
+        -TsaCodebaseAdmin $(_TsaCodebaseAdmin)
+        -TsaBugAreaPath $(_TsaBugAreaPath)
+        -TsaIterationPath $(_TsaIterationPath)
+        -TsaRepositoryName "dotnet-installer"
+        -TsaCodebaseName "dotnet-installer"
+        -TsaPublish $True'
+
+- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest'), not(contains(variables['Build.SourceBranch'], 'refs/heads/internal/'))) }}:
+  - stage: copy_to_latest
+    displayName: Copy to latest
+    dependsOn:
+      # This will run only after all the publishing stages have run.
+      # These stages are introduced in the eng/common/templates/post-build/channels YAML templates
+      - NetCore_Dev5_Publish
+    jobs:
+    - job: Copy_SDK_To_Latest
+      pool:
+        name: Hosted VS2017
+      condition: succeeded()
+      variables:
+        - group: DotNet-DotNetCli-Storage
+      steps:
+        - script: eng/CopyToLatest.cmd
+                  /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
+                  /p:DotnetPublishSdkAssetsBlobFeedUrl=https://dotnetcli.blob.core.windows.net/dotnet/index.json
+                  /p:DotNetPublishSdkAssetsBlobFeedKey=$(dotnetcli-storage-key)
+                  /p:DotnetPublishChecksumsBlobFeedUrl=https://dotnetclichecksums.blob.core.windows.net/dotnet/index.json
+                  /p:DotNetPublishChecksumsBlobFeedKey=$(dotnetclichecksums-storage-key)
+          displayName: Copy to latest
